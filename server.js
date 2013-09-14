@@ -1,10 +1,14 @@
 var http = require('http');
+var url = require('url');
 
-http.createServer(function(req,resp) {
-	resp.writeHead(200, {"Content-Type": "text/plain"});
-	resp.write("Node was set up successfully on your Raspberry Pi.");
-	resp.end();
-	
-	console.log("sample output to console");
+function start(){
+  function onRequest(request,response){
+    var pathname = url.parse(request.url).pathname;
+    console.log("Request received for " + pathname + ".");
+    response.end("Raspberry Pi up and running\nRequested path " + pathname);
+  }
+  http.createServer(onRequest).listen(80);
+  console.log("Server was started.");
 
-}).listen(80);
+}
+exports.start = start;
