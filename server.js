@@ -27,10 +27,13 @@ function start(){
   function onRequest(request,response){
     var pathname = url.parse(request.url).pathname;
     console.log("Request received for " + pathname + ".");
+    response.render('index',
+      { title : 'Home' }
+    );
     response.end("Raspberry Pi up and running\nRequested path " + pathname);
   }
   app.get("*",onRequest);
-  http.createServer(app).listen(80);
+  http.createServer(app).listen(8080);
   console.log("Server was started.");
 
 }
