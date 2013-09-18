@@ -33,7 +33,7 @@ function start(){
     response.end("Raspberry Pi up and running\nRequested path " + pathname);
   }
   app.get("*",onRequest);
-  http.createServer(app).listen(8080);
+  http.createServer(app).listen(80);
   console.log("Server was started.");
 
 }
