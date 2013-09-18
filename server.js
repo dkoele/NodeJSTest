@@ -28,7 +28,7 @@ function start(){
     var pathname = url.parse(request.url).pathname;
     console.log("Request received for " + pathname + ".");
     response.render('index',
-      { title : 'Home' }
+      { title : 'Home - ' + pathname }
     );
     response.end("Raspberry Pi up and running\nRequested path " + pathname);
   }
