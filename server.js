@@ -32,8 +32,12 @@ function start(){
     );
     response.end("Raspberry Pi up and running\nRequested path " + pathname);
   }
+  app.get("/form", function(req,res){
+    res.render('form', {title : 'form'});
+  });
   app.get("*",onRequest);
-  http.createServer(app).listen(80);
+
+  http.createServer(app).listen(8080);
   console.log("Server was started.");
 
 }
