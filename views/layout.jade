@@ -8,12 +8,13 @@ html
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
     script(src='/bootstrap/js/bootstrap.min.js')
   body
-    header
-      h1 #{title}
     .container
+      .page-header
+        h1 #{title}
+          small  subtitle
       .main-content
         block content
       .sidebar
         block sidebar
-    footer
-      p Running on node with Express, Jade and Stylus
+      footer
+        p Running on node with Express, Jade and Stylus
