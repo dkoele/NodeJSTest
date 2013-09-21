@@ -1,0 +1,58 @@
+extend layout
+block content
+
+  form(role="form")
+    div
+      label Title : *
+      div(data-toggle="buttons").btn-group.btn-group-lg
+        label.btn.btn-default Mr
+          input#mr(type="radio", name="options")
+        label.btn.btn-default Ms
+          input#ms(type="radio", name="options")
+
+      label.label.label-default Enter details:
+      div.row
+        .col-lg-2
+          label Initials
+        .col-lg-4
+          input.form-control(type="text")
+        .col-lg-2
+          label bla
+        .col-lg-4
+          input.form-control.col-lg-3(type="text")
+      div.row
+        .col-lg-4
+          label Lastname
+        .col-lg-4
+          input.form-control(type="text")
+      div.row
+        .col-lg-3
+          label Birthdate
+        .col-lg-1
+          input.form-control(type="text")
+        .col-lg-1
+          input.form-control(type="text")
+        .col-lg-1
+          input.form-control(type="text")
+        .col-lg-6
+          label enter "00" if bla
+       div.row
+         .col-lg-3
+           label Postalcode
+         .col-lg-2
+           input.form-control.col-md-4(type="text")
+         .col-lg-1
+           input.form-control(type="text")
+         .col-lg-6
+           label Enter "0000 AA" blah
+       div.row
+         .col-lg-2
+           label Housenumber
+         .col-lg-2
+           input.form-control(type="text")
+         .col-lg-2
+           label addition
+         .col-lg-2
+           input.form-control(type="text")
+       button.btn.btn-primary OK
+

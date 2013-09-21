@@ -35,9 +35,12 @@ function start(){
   app.get("/form", function(req,res){
     res.render('form', {title : 'form'});
   });
+  app.get("/address", function(req,res){
+    res.render('address', {title : 'Enter address'});
+  });
   app.get("*",onRequest);
 
-  http.createServer(app).listen(8080);
+  http.createServer(app).listen(80);
   console.log("Server was started.");
 
 }
