@@ -4,6 +4,7 @@ var http=require('http')
   , stylus = require('stylus')
   , nib= require('nib');
 var url = require('url');
+var config = require('./config');
 
 // Create express application
 var app = express();
@@ -18,6 +19,15 @@ var routes = require('./routes');
 
 // Set up the logging
 var fs = require('fs');
+// Create log folder if not exists
+fs.mkdir('./logs/',function(e){
+  if(!e || (e && e.code === 'EEXIST')){
+    //do something with contents
+  } else {
+    //debug
+    console.log(e);
+  }
+});
 var expressLogFile = fs.createWriteStream('./logs/express.log',{flags : 'a'});
 
 // Required for nib/stylus ???
@@ -56,7 +66,7 @@ var handlers = {
 
 function start(){
   routes.setup(app, handlers);
-  var port = process.env.PORT || 3000;
+  var port = process.env.PORT || config.port || 3000;
   app.listen(port);
   console.log("Express server listening on port %d in %s mode", port, app.settings.env);
   console.log(app.routes);
