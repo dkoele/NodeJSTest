@@ -1,0 +1,14 @@
+extend ../layout_nohead
+block header
+    .jumbotron
+        .container
+            h1 #{title}
+            p #{subtitle}
+block content
+    div.top
+      each item in routes
+        em= item
+            each prop in item
+                li= prop.path
+    div.content
+    div.footer
