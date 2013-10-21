@@ -6,7 +6,7 @@ function showEntryPage(req,res) {
 exports.showEntryPage = showEntryPage;
 
 function showScanResult(req,res) {
-    res.render('form', {title : 'RESULT'});
+    res.render('form', {title : req.body.barcode});
     //res.end('Hello BarcodeWeb ShowEntryPage');
 };
 exports.showScanResult = showScanResult;
