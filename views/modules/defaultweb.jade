@@ -7,8 +7,7 @@ block header
 block content
     div.top
       each item in routes
-        em= item
-            each prop in item
-                li= prop.path
+        each prop in item
+          li= prop.method + ' ' + prop.path
     div.content
     div.footer
