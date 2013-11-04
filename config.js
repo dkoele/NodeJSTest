@@ -1,7 +1,7 @@
 module.exports = {
     "port" : "8080",
     "db" :  {
-                "mongodb" : "mongodb://username:password@dsXXXXX.mongolab.com:45077/databasename"
+                "mongodb" : "mongodb://localhost"
             },
     "logger" : {
                 "api" : "logs/api.log",
