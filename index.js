@@ -1,6 +1,6 @@
 var config = require('./config');
 //var winston = require('winston');
-//var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 var server = require('./server');
 
 // We will log normal api operations into api.log
@@ -13,7 +13,7 @@ console.log("starting logger...");
 //    filename: config.logger.exception
 //}));
 console.log("logger started. Connecting to MongoDB...");
-//mongoose.connect(config.db.mongodb);
+mongoose.connect(config.db.mongodb);
 console.log("Successfully connected to MongoDB. Starting web server...");
 server.start();
 console.log("Successfully started web server. Waiting for incoming connections...");
