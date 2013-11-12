@@ -14,6 +14,7 @@ var app = express();
 //var PrinterApiHandler = new require('./modules/printerapi/handler');
 var BarcodeWebHandler = require('./modules/barcodeweb/handler');
 var DefaultWebHandler = require('./modules/defaultweb/handler');
+var ConfigWebHandler = require('./modules/configweb/handler');
 
 // Set up the routes
 var routes = require('./routes');
@@ -63,7 +64,8 @@ app.configure('development', function(){
 
 var handlers = {
     barcodeweb : BarcodeWebHandler,
-    defaultweb : DefaultWebHandler
+    defaultweb : DefaultWebHandler,
+    configweb  : ConfigWebHandler
 };
 
 function start(){
