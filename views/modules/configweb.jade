@@ -6,5 +6,8 @@ block header
             p #{subtitle}
 block content
     div.top
-        .
+        each item in routes
+            each prop in item
+                li= prop.method + ' ' + prop.path
+    div.content
     div.footer
